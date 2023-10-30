@@ -23,4 +23,4 @@ Route::get('/payment', function() {
 })->name('payment');
 
 Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
-Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
+Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback'])->name('paystack.callback');
