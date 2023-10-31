@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
+    {{-- <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
         *,
@@ -827,49 +827,48 @@
                 padding: 2rem
             }
         }
-    </style>
+    </style> --}}
 </head>
 
 <body class="antialiased">
-    <form class="w-full max-w-sm">
+    <form class="w-full max-w-sm" method="POST" action="{{route('pay')}}">
+        @csrf
         <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-              Full Name
-            </label>
-          </div>
-          <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="Jane Doe">
-          </div>
+            <div>
+                <label for="name" class="block text-sm text-gray-500">Name</label>
+
+                <input type="text" id="name" placeholder="John Doe"
+                    class="" name="name" />
+            </div>
         </div>
+
         <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
-              Password
-            </label>
-          </div>
-          <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-password" type="password" placeholder="******************">
-          </div>
+            <div>
+                <label for="email" class="block text-sm text-gray-500">Email</label>
+
+                <input type="emal" id="email" placeholder="John Doe"
+                    class="" name="email" />
+            </div>
         </div>
+
         <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3"></div>
-          <label class="md:w-2/3 block text-gray-500 font-bold">
-            <input class="mr-2 leading-tight" type="checkbox">
-            <span class="text-sm">
-              Send me your newsletter!
-            </span>
-          </label>
+            <div>
+                <label for="amount" class="block text-sm text-gray-500">Amount</label>
+
+                <input type="number" id="amount" name="amount" placeholder="Amount" />
+            </div>
         </div>
         <div class="md:flex md:items-center">
-          <div class="md:w-1/3"></div>
-          <div class="md:w-2/3">
-            <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-              Sign Up
-            </button>
-          </div>
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+                <button
+                    class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="submit">
+                    Pay
+                </button>
+            </div>
         </div>
-      </form>
+    </form>
 </body>
 
 </html>
